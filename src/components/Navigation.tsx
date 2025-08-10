@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
                     <polyline id="Path-42" stroke="#FFFFFF" strokeWidth="1.75" points="9.5 7.75 9.5 12 9.5 16.25" data-points="13.5 8.75 10.5 12 13.5 15.25"></polyline>
                   </g>
                 </svg>
-                <span>Home</span>
+                <span>Project info</span>
               </a>
             </li>
             <li>
@@ -44,24 +44,15 @@ const Navigation: React.FC = () => {
                 <span>About</span>
               </a>
             </li>
+
             <li>
-              <a className="main-nav-link nav-link-retractable" href="#contact" title="Contact">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon">
-                  <g fill="none" fillRule="evenodd">
-                    <path fill="currentColor" d="M12.007 4C7.579 4 4 7.606 4 12.066a8.06 8.06 0 0 0 5.475 7.652c.397.08.543-.173.543-.387 0-.187-.013-.828-.013-1.496-2.227.481-2.691-.961-2.691-.961-.358-.935-.888-1.175-.888-1.175-.73-.495.053-.495.053-.495.808.054 1.233.828 1.233.828.715 1.229 1.869.882 2.333.668.066-.52.278-.881.504-1.082-1.777-.187-3.646-.881-3.646-3.98 0-.88.318-1.602.822-2.163-.08-.2-.358-1.028.08-2.136 0 0 .676-.214 2.2.828a7.698 7.698 0 0 1 2.002-.268 7.7 7.7 0 0 1 2.001.268c1.525-1.042 2.2-.828 2.2-.828.438 1.108.16 1.936.08 2.136.517.561.822 1.282.822 2.164 0 3.098-1.869 3.779-3.659 3.98.292.253.544.734.544 1.495 0 1.082-.013 1.95-.013 2.217 0 .214.146.467.543.387A8.06 8.06 0 0 0 20 12.066C20.013 7.606 16.42 4 12.007 4z"></path>
-                  </g>
-                </svg>
-                <span>Contact</span>
-              </a>
-            </li>
-            <li>
-              <a className="main-nav-link sponsor-button" href="#sponsor" title="Support Clean Energy">
+              <a className="main-nav-link sponsor-button" href="#saved-projects" title="Saved Projects">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon">
                   <g fill="none" fillRule="evenodd">
                     <path fill="currentColor" fillRule="nonzero" d="M12 18.445a.778.778 0 0 1-.34-.078C11.39 18.235 5 15.077 5 9.889a3.889 3.889 0 0 1 6.638-2.75L12 7.5l.362-.361A3.889 3.889 0 0 1 19 9.889c0 5.17-6.387 8.344-6.66 8.478a.778.778 0 0 1-.34.078z"></path>
                   </g>
                 </svg>
-                <span>Support</span>
+                <span>Saved Projects</span>
               </a>
             </li>
           </ul>
