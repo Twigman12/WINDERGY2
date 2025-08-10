@@ -278,7 +278,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTurbineClick }) => {
   };
 
   return (
-    <section className="section hero-section">
+    <section id="hero" className="section hero-section">
       <div className="hero-background">
         <canvas 
           ref={canvasRef} 

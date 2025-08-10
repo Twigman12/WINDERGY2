@@ -15,7 +15,13 @@ const Navigation: React.FC = () => {
             <li>
               <a className="main-nav-link docs-link is-active" data-id="docs" href="#hero" title="Home" onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+                const heroSection = document.getElementById('hero');
+                if (heroSection) {
+                  heroSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  // Fallback: scroll to top of page
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
               }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon">
                   <g id="sidebar" fill="none" fillRule="evenodd">
