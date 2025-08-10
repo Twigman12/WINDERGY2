@@ -15,9 +15,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTurbineClick }) => {
   const [showInfo, setShowInfo] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [funFact, setFunFact] = useState('');
-  const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState({ title: '', content: '' });
-  const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -193,11 +191,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTurbineClick }) => {
     const handleClick = (event: MouseEvent) => {
       if (intersectedObject && intersectedObject.userData.name) {
         const componentName = intersectedObject.userData.name;
-        setModalContent({
-          title: `About the ${componentName}`,
-          content: "Click the button below to learn more about this component."
-        });
-        setShowModal(true);
         onTurbineClick(componentName.toLowerCase());
       }
     };
@@ -244,28 +237,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTurbineClick }) => {
     };
   }, [onTurbineClick]);
 
-  // Mock AI function (replace with actual API call)
-  const generateExplanation = async (component: string) => {
-    setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const explanations: { [key: string]: string } = {
-      blade: "Wind turbine blades are aerodynamic surfaces that capture kinetic energy from the wind. They're designed with airfoil shapes similar to airplane wings, creating lift that rotates the turbine. Modern blades can be over 100 feet long and are made from lightweight composite materials for strength and efficiency.",
-      nacelle: "The nacelle is the housing unit that sits atop the tower and contains the turbine's key mechanical and electrical components. It includes the gearbox, generator, controller, and brake system. This compact structure protects sensitive equipment from weather while maintaining optimal positioning for wind capture.",
-      tower: "The tower provides the structural foundation that elevates the turbine components to heights where wind speeds are higher and more consistent. Modern towers can reach heights of 300+ feet and are typically constructed from steel or concrete. Taller towers access stronger winds, significantly increasing energy production."
-    };
-    
-    setModalContent({
-      title: `About the ${component.charAt(0).toUpperCase() + component.slice(1)}`,
-      content: explanations[component] || "Component information not available."
-    });
-    setIsLoading(false);
-  };
-
   const getFunFact = async () => {
-    setIsLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
     const facts = [
       "A single modern wind turbine can power over 1,400 homes for a year!",
       "Wind energy is one of the fastest-growing energy sources worldwide, with capacity doubling every 3 years.",
@@ -274,7 +246,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTurbineClick }) => {
       "A wind turbine typically pays for itself in energy production within 6-8 months of operation."
     ];
     setFunFact(facts[Math.floor(Math.random() * facts.length)]);
-    setIsLoading(false);
   };
 
   return (
@@ -322,26 +293,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTurbineClick }) => {
           </div>
         )}
 
-        {/* Modal */}
-        {showModal && (
-          <div className="explanation-modal">
-            <button className="close-button" onClick={() => setShowModal(false)}>×</button>
-            <h2>{modalContent.title}</h2>
-            <div className="explanation-content">
-              {isLoading ? "Generating..." : modalContent.content}
-            </div>
-            <button 
-              className="gemini-button" 
-              onClick={() => generateExplanation(hoveredComponent?.toLowerCase() || '')}
-              disabled={isLoading}
-            >
-              ✨ Generate Explanation
-            </button>
-          </div>
-        )}
 
-        {/* Loading Spinner */}
-        {isLoading && <div className="loader"></div>}
+
+
 
         <div className="scroll-indicator">
           <div className="scroll-arrow">↓</div>

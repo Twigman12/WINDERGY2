@@ -33,7 +33,13 @@ const Navigation: React.FC = () => {
               </a>
             </li>
             <li>
-              <a className="main-nav-link" href="#dashboard" title="Projects">
+              <a className="main-nav-link" href="#dashboard" title="Projects" onClick={(e) => {
+                e.preventDefault();
+                const dashboardSection = document.querySelector('.dashboard-section');
+                if (dashboardSection) {
+                  dashboardSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon">
                   <g fill="none" fillRule="evenodd">
                     <path fill="currentColor" fillRule="nonzero" d="M16.1666667,6.125 L7.83333333,6.125 C5.9693723,6.125 4.45833333,7.63603897 4.45833333,9.5 L4.45833333,14.5 C4.45833333,16.363961 5.9693723,17.875 7.83333333,17.875 L16.1666667,17.875 C18.0306277,17.875 19.5416667,16.363961 19.5416667,14.5 L19.5416667,9.5 C19.5416667,7.63603897 18.0306277,6.125 16.1666667,6.125 Z M7.83333333,7.875 L16.1666667,7.875 C17.0641294,7.875 17.7916667,8.60253728 17.7916667,9.5 L17.7916667,14.5 C17.7916667,15.3974627 17.0641294,16.125 16.1666667,16.125 L7.83333333,16.125 C6.93587061,16.125 6.20833333,15.3974627 6.20833333,14.5 L6.20833333,9.5 C6.20833333,8.60253728 6.93587061,7.875 7.83333333,7.875 Z"></path>

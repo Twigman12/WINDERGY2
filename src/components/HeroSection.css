@@ -119,34 +119,7 @@
   color: #aaeaff;
 }
 
-/* Modal Panel for Explanations */
-.explanation-modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 500px;
-  z-index: 100;
-  background-color: rgba(10, 42, 74, 0.9);
-  border: 1px solid #0077be;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
 
-.explanation-modal h2 {
-  margin-top: 0;
-  color: #00bfff;
-}
-
-.explanation-content {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  min-height: 50px;
-  line-height: 1.6;
-  color: #ddeeff;
-}
 
 /* Component Tooltip */
 .component-tooltip {
@@ -168,53 +141,9 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Buttons */
-.gemini-button {
-  background-color: #00bfff;
-  color: #0a2a4a;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
 
-.gemini-button:hover {
-  background-color: #ffffff;
-}
 
-.gemini-button:disabled {
-  background-color: #666666;
-  cursor: not-allowed;
-}
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  color: #00bfff;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Loading Spinner */
-.loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 102;
-  width: 40px;
-  height: 40px;
-  margin: -20px 0 0 -20px;
-  border: 5px solid #0077be;
-  border-radius: 50%;
-  border-top: 5px solid #00bfff;
-  animation: spin 1s linear infinite;
-}
 
 .scroll-indicator {
   position: absolute;
@@ -308,10 +237,7 @@
     padding: 10px;
   }
 
-  .explanation-modal {
-    width: 95%;
-    padding: 10px;
-  }
+
 }
 
 @media (max-width: 480px) {
