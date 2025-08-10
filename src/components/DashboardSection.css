@@ -1,0 +1,35 @@
+/* Dashboard Section - Anime.js iframe integration */
+.dashboard-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  padding: 0;
+  color: #e2e8f0;
+  position: relative;
+}
+
+.animejs-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.animejs-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .animejs-container {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .animejs-container {
+    height: 100vh;
+  }
+}

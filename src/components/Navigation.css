@@ -1,0 +1,177 @@
+/* Anime.js inspired header styling */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+#site-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 4rem;
+}
+
+/* Logo and Brand */
+.heading-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.heading-logo a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.heading-logo span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+/* Navigation Menu */
+#site-menu {
+  display: flex;
+  align-items: center;
+}
+
+#site-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+#site-menu li {
+  margin: 0;
+}
+
+.main-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.main-nav-link:hover {
+  color: #e2e8f0;
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.main-nav-link.is-active {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.main-nav-link .icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.main-nav-link span {
+  white-space: nowrap;
+}
+
+/* Sponsor Button */
+.sponsor-button .main-nav-link {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+}
+
+.sponsor-button .main-nav-link:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+}
+
+/* Mobile Menu Toggle */
+#toggle-site-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+#toggle-site-menu:hover {
+  background: rgba(148, 163, 184, 0.1);
+}
+
+#toggle-site-menu .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #site-header-content {
+    padding: 0 1rem;
+  }
+  
+  .heading-logo span {
+    display: none;
+  }
+  
+  #site-menu {
+    display: none;
+  }
+  
+  #toggle-site-menu {
+    display: block;
+  }
+  
+  #site-menu.mobile-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    padding: 1rem;
+  }
+  
+  #site-menu.mobile-open ul {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  #site-menu.mobile-open .main-nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  #site-header-content {
+    padding: 0 0.75rem;
+  }
+}
