@@ -13,14 +13,17 @@ const Navigation: React.FC = () => {
         <nav id="site-menu">
           <ul>
             <li>
-              <a className="main-nav-link docs-link is-active" data-id="docs" href="#hero" title="Home">
+              <a className="main-nav-link docs-link is-active" data-id="docs" href="#hero" title="Home" onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon">
                   <g id="sidebar" fill="none" fillRule="evenodd">
                     <path id="rectangle" fill="#FFFFFF" fillRule="nonzero" d="M16.167 6.125H7.833A3.375 3.375 0 0 0 4.458 9.5v5a3.375 3.375 0 0 0 3.375 3.375h8.334a3.375 3.375 0 0 0 3.375-3.375v-5a3.375 3.375 0 0 0-3.375-3.375zm-8.334 1.75h8.334c.897 0 1.625.728 1.625 1.625v5c0 .897-.728 1.625-1.625 1.625H7.833A1.625 1.625 0 0 1 6.208 14.5v-5c0-.897.728-1.625 1.625-1.625z"></path>
                     <polyline id="Path-42" stroke="#FFFFFF" strokeWidth="1.75" points="9.5 7.75 9.5 12 9.5 16.25" data-points="13.5 8.75 10.5 12 13.5 15.25"></polyline>
                   </g>
                 </svg>
-                <span>Project info</span>
+                <span>Home</span>
               </a>
             </li>
             <li>
